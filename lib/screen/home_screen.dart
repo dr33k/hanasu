@@ -19,17 +19,50 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       appBar: buildAppBar(context, widget.title),
+
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: buildScreen(context, "No new discussions")
+        child: _buildDialogueScreen(context, "No new dialogues")
       ),
+
       floatingActionButton: FloatingActionButton(
         backgroundColor: Theme.of(context).colorScheme.secondary,
+        foregroundColor: Theme.of(context).colorScheme.onSecondary,
         onPressed: (){},
-        tooltip: 'Increment',
+        tooltip: 'New Dialogue',
         child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
+
+      bottomNavigationBar: buildBottomNavigationBar(context),
     );
   }
+
+
+  Widget _buildDialogueScreen(BuildContext context, String emptyStateMessage) {
+    int noOfMessages = 0;
+
+    if (noOfMessages == 0) {
+      return Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          SizedBox(height: 250,),
+          Text(
+            emptyStateMessage,
+            style: Theme.of(context).textTheme.bodyMedium,
+          ),
+          Icon(
+            Icons.chat_rounded,
+            size: 150, color: Theme.of(context).colorScheme.secondary,
+            shadows: [Shadow(color:Theme.of(context).colorScheme.primary, offset: Offset(10, 20))],
+            blendMode: BlendMode.luminosity,
+          )
+        ],
+      );
+    } else {
+      return Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[],
+      );
+    }
+  }
+
 }

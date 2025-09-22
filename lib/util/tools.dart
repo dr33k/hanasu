@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 AppBar buildAppBar(BuildContext context, String title) {
   return AppBar(
@@ -21,26 +20,12 @@ AppBar buildAppBar(BuildContext context, String title) {
   );
 }
 
+BottomNavigationBar buildBottomNavigationBar(BuildContext context){
 
-Widget buildScreen(BuildContext context, String emptyStateMessage) {
-  int noOfMessages = 0;
-
-  if (noOfMessages == 0) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        SizedBox(height: 250,),
-        Text(
-          emptyStateMessage,
-          style: Theme.of(context).textTheme.bodyMedium,
-        ),
-        Icon(Icons.chat_bubble_rounded, size: 200)
-      ],
-    );
-  } else {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: <Widget>[],
-    );
-  }
+  return BottomNavigationBar(items: [
+    BottomNavigationBarItem(icon: Icon(Icons.chat_rounded), label: "Dialogues" ),
+    BottomNavigationBarItem(icon: Icon(Icons.phone), label: "Calls"),
+  ],
+  unselectedItemColor: Theme.of(context).colorScheme.secondary,
+  );
 }
