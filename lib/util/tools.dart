@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 AppBar buildAppBar(BuildContext context, String title) {
   return AppBar(
     title: Text(title,
-        style: Theme.of(context).textTheme.headlineMedium
+        style: Theme.of(context).textTheme.headlineSmall
     ),
     backgroundColor: Theme.of(context).colorScheme.surface,
     toolbarHeight: 85,

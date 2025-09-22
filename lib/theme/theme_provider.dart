@@ -1,4 +1,4 @@
-import 'package:chat/theme/themes.dart';
+import 'package:hanasu/theme/themes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

@@ -1,4 +1,4 @@
-package com.seven.chat;
+package com.seven.hanasu;
 
 import io.flutter.embedding.android.FlutterActivity;
 

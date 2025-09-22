@@ -1,4 +1,4 @@
-# chat
+# hanasu
 
 Instant Messaging Application
 
